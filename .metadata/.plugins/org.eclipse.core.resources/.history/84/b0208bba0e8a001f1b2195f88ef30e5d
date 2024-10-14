@@ -1,0 +1,86 @@
+package stack;
+
+public class Reverse_Stack_char {
+    private char stack[];
+    private int maxSize;
+    private int tos;
+
+    // Method to create the stack
+    public void create_Stack(int size) {
+        maxSize = size;
+        stack = new char[maxSize];
+        tos = -1; // Initialize top of stack
+    }
+
+    // Push method to add an element to the stack
+    public void push(char e) {
+        if (is_Full()) {
+            System.out.println("Stack is full. Cannot push " + e);
+            return;
+        }
+        stack[++tos] = e;
+        System.out.println("Element " + e + " pushed.");
+    }
+
+    // Check if the stack is full
+    public boolean is_Full() {
+        return tos == maxSize - 1;
+    }
+
+    // Pop method to remove the top element from the stack
+    public char pop() {
+        if (is_Empty()) {
+            System.out.println("Stack is empty. Cannot pop.");
+            return '\0'; // Return null character
+        }
+        return stack[tos--];
+    }
+
+    // Check if the stack is empty
+    public boolean is_Empty() {
+        return tos == -1;
+    }
+
+    // Print method to display the stack elements
+    public void print_Stack() {
+        System.out.println("Stack contains:");
+        for (int i = tos; i >= 0; i--) {
+            System.out.println(stack[i]);
+        }
+    }
+
+    
+    public void reverse_Stack() {
+        StringBuilder sb = new StringBuilder();
+        
+        
+        while (!is_Empty()) {
+            sb.append(pop());
+        }
+
+        
+        for (char c : sb.toString().toCharArray()) {
+            push(c);
+        }
+    }
+
+    // Main method for testing
+    public static void main(String[] args) {
+        Reverse_Stack_char r = new Reverse_Stack_char();
+        r.create_Stack(5);
+        
+        r.push('j');
+        r.push('a');
+        r.push('v');
+        r.push('a');
+        
+        System.out.println("Before reversing:");
+        r.print_Stack();
+        
+        // Reverse the stack
+        r.reverse_Stack();
+        
+        System.out.println("After reversing:");
+        r.print_Stack();
+    }
+}
