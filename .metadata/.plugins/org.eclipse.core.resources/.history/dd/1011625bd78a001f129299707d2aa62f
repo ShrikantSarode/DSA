@@ -1,0 +1,102 @@
+package linkedlist;
+
+public class LinkedListDemo1 {
+
+	
+		Node root;//linked list uses container ship-uses has a relation void create_list()
+		{
+		root=null;//preparing with empty root
+		}
+
+	void insert_left(int data)
+		{
+		Node n=new Node(data);
+		if(root==null)
+		{
+		root=n;//n becomes 1st so root 
+		}
+		else
+		{
+		n.next=root;//1 root=n;//2 
+		}
+		System.out.println(root.data+" inserted");
+
+		}
+
+	void delete_left(int data) {
+		if (root == null) {
+			System.out.println("Empty List");
+		} else {
+			Node t;
+			t = root;// 1
+			root=root.next;//2 
+			System.out.println(t.data+" deleted");
+		}
+	}
+
+	void insert_right(int data) {
+		Node n = new Node(data);
+		if (root == null)
+			root = n;// n becomes 1st so root= else
+		{
+			Node t = root;
+			while (t.next != null) {
+				t = t.next;
+			}
+			t.next = n;
+		}
+		System.out.println(root.data + " inserted");
+
+	}
+
+	void delete_right() {
+		if (root == null)
+			System.out.println("Empty List");
+		else {
+			Node t, t2;
+			t = t2 = root;// 1 while(t.next!=null)
+			{
+				t2 = t;
+				t = t.next;
+			}
+			if (t == root)// single node root=null;//reset root as only node left else
+				t2.next = null;
+			System.out.println(t.data + " deleted");
+		}
+	}
+
+	void print_list() {
+		if (root == null)
+			System.out.println("List Empty");
+		else {
+			Node t = root;
+			while (t != null) {
+				System.out.print("|" + t.data + "|->");
+				t = t.next;
+			}
+		}
+	}
+
+	void search_list(int data)
+		{
+		if(root==null)
+		System.out.println("List Empty");
+		else
+		{
+		Node t=root;
+		while(t!=null)
+		{ if(t.data==data)//match found {
+		System.out.println(t.data+" found in list");
+		break;
+		}
+		t=t.next;
+		}
+		if(t==null)//not found System.out.println(data+" not found in list");
+		}
+}
+// delete_element(e) //search_element(r)
+}
+		}
+	
+
+

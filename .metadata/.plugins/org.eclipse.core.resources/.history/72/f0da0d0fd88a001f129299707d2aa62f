@@ -1,0 +1,118 @@
+package linkedlist;
+
+public class LinkedListDemo1 {
+
+    Node root; // Head of the linked list
+
+    public LinkedListDemo1() {
+        root = null; // Initialize with an empty list
+    }
+
+    void insertLeft(int data) {
+        Node n = new Node(data);
+        if (root == null) {
+            root = n; // If list is empty, set root to new node
+        } else {
+            n.next = root; // Point new node to current root
+            root = n;      // Update root to the new node
+        }
+        System.out.println(data + " inserted on the left");
+    }
+
+    void deleteLeft() {
+        if (root == null) {
+            System.out.println("Empty List");
+        } else {
+            Node t = root; // Keep track of the node to delete
+            root = root.next; // Move root to the next node
+            System.out.println(t.data + " deleted from the left");
+        }
+    }
+
+    void insertRight(int data) {
+        Node n = new Node(data);
+        if (root == null) {
+            root = n; // If list is empty, set root to new node
+        } else {
+            Node t = root;
+            while (t.next != null) {
+                t = t.next; // Traverse to the last node
+            }
+            t.next = n; // Link the last node to the new node
+        }
+        System.out.println(data + " inserted on the right");
+    }
+
+    void deleteRight() {
+        if (root == null) {
+            System.out.println("Empty List");
+        } else {
+            Node t = root, t2 = null; // Use two pointers to find the last node
+            while (t.next != null) {
+                t2 = t; // t2 will be the second last node
+                t = t.next; // Move t to the last node
+            }
+            if (t == root) {
+                root = null; // Reset root if there's only one node
+            } else {
+                t2.next = null; // Remove the last node
+            }
+            System.out.println(t.data + " deleted from the right");
+        }
+    }
+
+    void printList() {
+        if (root == null) {
+            System.out.println("List Empty");
+        } else {
+            Node t = root;
+            while (t != null) {
+                System.out.print("|" + t.data + "|->");
+                t = t.next; // Move to the next node
+            }
+            System.out.println("null"); // End of the list
+        }
+    }
+
+    void searchList(int data) {
+        if (root == null) {
+            System.out.println("List Empty");
+        } else {
+            Node t = root;
+            while (t != null) {
+                if (t.data == data) { // Match found
+                    System.out.println(data + " found in list");
+                    return; // Exit method once found
+                }
+                t = t.next; // Move to the next node
+            }
+            System.out.println(data + " not found in list"); // Not found
+        }
+    }
+    public static void main(String[] args) {
+    	 LinkedListDemo1 ll = new LinkedListDemo1();
+
+         // Inserting elements
+         ll.insertLeft(10); // Insert at the left
+         ll.insertRight(20); // Insert at the right
+         ll.insertLeft(5); // Insert at the left
+         ll.printList(); // Output the list
+
+         // Deleting elements
+         ll.deleteRight(); // Remove the last element
+         ll.printList(); // Output the list after deletion
+
+         // Searching for an element
+         ll.searchList(10); // Search for an existing element
+         ll.searchList(30); // Search for a non-existing element
+
+         // Deleting from the left
+         ll.deleteLeft(); // Remove the first element
+         ll.printList(); // Output the list after deletion
+
+         // More operations
+         ll.insertRight(25); // Insert at the right
+         ll.printList(); // Output the list after insertion
+     }
+	}
+
