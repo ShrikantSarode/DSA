@@ -1,0 +1,19 @@
+package linkedlist;
+
+public class Dynamic_queue_class {
+
+	Node front, rear;
+
+	void create_Queue() {
+		front = rear = null;
+	}
+	
+	void Enqueue(int data)
+	{
+		Node n= new Node(data);
+		if(rear==null)
+		{
+			front=rear=n;
+		}
+	}
+}

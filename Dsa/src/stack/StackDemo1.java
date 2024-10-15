@@ -6,7 +6,7 @@ public class StackDemo1 {
 
 	private int stack[], MaxSize, tos;
 
-	Scanner sc = new Scanner(System.in);gg
+	Scanner sc = new Scanner(System.in);
 
 	public void create_Stack(int size) {
 
