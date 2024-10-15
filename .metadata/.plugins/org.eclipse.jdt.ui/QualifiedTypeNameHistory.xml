@@ -2,8 +2,8 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="stack.StackDemo1"/>
     <fullyQualifiedTypeName name="stack.Reverse_Stack_char"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="stack.Binary"/>
     <fullyQualifiedTypeName name="queue.QueueDemo1"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>
