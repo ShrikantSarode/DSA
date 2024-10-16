@@ -1,0 +1,78 @@
+package linkedlist;
+
+public class Circular_linked_list_class {
+
+	Node root, last; // Head of the linked list
+
+	// root=null; // Initialize with an empty list
+
+	void create_list() {
+	}
+
+	void insertLeft(int data) {
+		Node n = new Node(data);
+		if (root == null) {
+			root = n; // If list is empty, set root to new node
+		} else {
+			n.next = root; // Point new node to current root
+			root = n; // Update root to the new node
+		}
+		System.out.println(data + " inserted on the left");
+	}
+
+	void deleteLeft() {
+		if (root == null) {
+			System.out.println("Empty List");
+		} else {
+			Node t = root; // Keep track of the node to delete
+			root = root.next; // Move root to the next node
+			System.out.println(t.data + " deleted from the left");
+		}
+	}
+
+	void insertRight(int data) {
+		Node n = new Node(data);
+		if (root == null) {
+			root = n; // If list is empty, set root to new node
+		} else {
+			Node t = root;
+			while (t.next != null) {
+				t = t.next; // Traverse to the last node
+			}
+			t.next = n; // Link the last node to the new node
+		}
+		System.out.println(data + " inserted on the right");
+	}
+
+	void deleteRight() {
+		if (root == null) {
+			System.out.println("Empty List");
+		} else {
+			Node t = root, t2 = null; // Use two pointers to find the last node
+			while (t.next != null) {
+				t2 = t; // t2 will be the second last node
+				t = t.next; // Move t to the last node
+			}
+			if (t == root) {
+				root = null; // Reset root if there's only one node
+			} else {
+				t2.next = null; // Remove the last node
+			}
+			System.out.println(t.data + " deleted from the right");
+		}
+	}
+
+	void printList() {
+		if (root == null) {
+			System.out.println("List Empty");
+		} else {
+			Node t = root;
+			while (t != null) {
+				System.out.print("|" + t.data + "|->");
+				t = t.next; // Move to the next node
+			}
+			System.out.println("null"); // End of the list
+		}
+	}
+
+}
