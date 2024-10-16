@@ -1,0 +1,55 @@
+package linkedlist;
+
+public class Dnode {
+    int data;
+    Dnode left,right,root,last;
+	   
+    public Dnode(int data) {
+        this.data = data;
+        this.left = this.right = null;
+    }
+
+    void create_list() {
+    	
+         root = last = null; // Preparing with empty root
+    }
+
+    void left_insert(int data) {
+        Dnode n = new Dnode(data);
+        if (root == null && last == null) {
+            root = last = n; // If list is empty, set root to new node
+        } else {
+            n.right = root; // Point new node to current root
+            root.left = n; // Set previous of current root to new node
+            root = n; // Update root to the new node
+        }
+        root.left = last;
+        last.right = root; // Maintain circular structure
+    }
+    void insertRight(int data) {
+		Dnode n = new Dnode(data);
+		if (root == null) {
+			root = last = n; // If list is empty, set root to new node
+			last.right = root; // Maintain circular link
+		} else {
+			last.right= n; // Last node's next points to new node
+			last = n; // Update last to new node
+			last.right= root; // New node's next points to root
+		}
+		System.out.println(data + " inserted on the right");
+	}
+    void deleteLeft() {
+		if (root == null) {
+			System.out.println("Empty List");
+		} else if (root == last) {
+			// Only one node in the list
+			System.out.println(root.data + " deleted from the left");
+			root = last = null; // List becomes empty
+		} else {
+			Dnode t = root; // Keep track of the node to delete
+			root = root.right; // Move root to the next node
+			last.right = root; // Maintain circular link
+			System.out.println(t.data + " deleted from the left");
+		}
+	}
+}

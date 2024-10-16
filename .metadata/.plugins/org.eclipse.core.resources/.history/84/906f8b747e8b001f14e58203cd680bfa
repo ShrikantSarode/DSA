@@ -1,0 +1,21 @@
+package linkedlist;
+
+public class Dnode {
+
+	int data;
+	Dnode left, right;
+
+	public Dnode(int data) {
+
+		this.data = data;
+		this.left = right = null;
+
+	}
+	Node root, last; // Head of the linked list
+
+	void create_list() {
+		root = last = null; // Preparing with empty root
+	}
+
+
+}
