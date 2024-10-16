@@ -1,0 +1,30 @@
+package assignment;
+
+import java.util.Scanner;
+
+public class AssignmentMain {
+	
+	public static void main(String[] args) {
+		
+		DoubleLinkedList obj = new DoubleLinkedList();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int ch;
+		do {
+			System.out.println("Menu");
+			System.out.println("1.Insert From Right.");
+			System.out.println("2.Remove From Left.");
+			System.out.println("3.Remove From Right.");
+			System.out.println("4.Insert From Right.");
+			switch (ch) {
+			case 1:
+				break;
+
+			default:
+				break;
+			}
+		}while(ch!=0);
+	}
+
+}

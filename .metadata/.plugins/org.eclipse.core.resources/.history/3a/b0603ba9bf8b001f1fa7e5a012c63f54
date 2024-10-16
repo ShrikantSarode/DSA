@@ -1,0 +1,22 @@
+package assignment;
+
+import java.util.Scanner;
+
+public class AssignmentMain {
+	
+	public static void main(String[] args) {
+		
+		DoubleLinkedList obj = new DoubleLinkedList();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		switch (ch) {
+		case 1:
+			break;
+
+		default:
+			break;
+		}
+	}
+
+}

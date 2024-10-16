@@ -1,0 +1,15 @@
+package assignment;
+
+public class DoubleLinkedList {
+	Node root,last;
+	
+	void create_List() {
+		root=last=null;
+	}
+	
+	void right_Insert(int data)
+	{
+		Node newnode = Node(data);
+	}
+
+}

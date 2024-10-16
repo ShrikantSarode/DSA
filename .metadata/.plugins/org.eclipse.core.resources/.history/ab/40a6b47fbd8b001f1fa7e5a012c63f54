@@ -1,0 +1,43 @@
+package assignment;
+
+import linkedlist.Node;
+
+public class DoubleLinkedList {
+	Node root,last;
+	
+	void create_List() {
+		root=last=null;
+	}
+	
+	void right_Insert(int data)
+	{
+		Node newNode =new  Node(data);
+		if(root==null)
+		{
+			root=last=newNode;
+			last.next=root;
+		}
+		else
+		{
+			last.next = newNode;
+			last = newNode;
+			last.next=root;
+		}
+		System.out.println(data + " inserted on the right");
+	}
+	void deleteLeft() {
+		if (root == null) {
+			System.out.println("Empty List");
+		} else if (root == last) {
+			// Only one node in the list
+			System.out.println(root.data + " deleted from the left");
+			root = last = null; // List becomes empty
+		} else {
+			Node t = root; // Keep track of the node to delete
+			root = root.next; // Move root to the next node
+			last.next = root; // Maintain circular link
+			System.out.println(t.data + " deleted from the left");
+		}
+	}
+
+}
