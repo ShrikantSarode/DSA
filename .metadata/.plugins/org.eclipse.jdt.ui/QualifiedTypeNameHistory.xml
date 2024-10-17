@@ -11,7 +11,7 @@
     <fullyQualifiedTypeName name="assignment.Node"/>
     <fullyQualifiedTypeName name="linkedlist.Node"/>
     <fullyQualifiedTypeName name="assignment.DoubleLinkedList"/>
+    <fullyQualifiedTypeName name="linkedlist.Dnode"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="linkedlist.Dnode"/>
 </qualifiedTypeNameHistroy>

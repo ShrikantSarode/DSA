@@ -1,0 +1,11 @@
+package treeexample;
+
+public class Tree_Class {
+
+	Node root;
+	
+	void create_tree()
+	{
+		root=null;
+	}
+}

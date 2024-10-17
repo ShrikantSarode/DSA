@@ -73,7 +73,7 @@ public class DoubleLinkedList {
 	        Node1 t = last;
 	        do {
 	            System.out.print("<-|" + t.data + "|->");
-	            t = t.last;
+	            t = t.next;//error here need to be t.last
 	        } while (t != last);  
 	        System.out.println("<-|" + last.data + "|"); 
 	    }

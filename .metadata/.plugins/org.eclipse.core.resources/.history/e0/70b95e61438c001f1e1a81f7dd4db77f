@@ -1,0 +1,102 @@
+package treeexample;
+
+public class Tree_Class {
+
+	Node root;
+
+	void create_tree() {
+		root = null;
+	}
+
+	void insert(Node r, Node n)// r= root and n=New node
+	{
+		if (root == null) {
+			root = n;
+		} else {
+			if (n.data < r.data) {
+				if (r.left == null)// empty left
+				{
+					r.left = n;
+				} else {
+					insert(r.left, n);// recurrsion call
+
+				}
+			} else {// if equal or greater than to right
+				if (r.right == null)// empty left
+				{
+					r.right = n;
+				} else {
+					insert(r.right, n);// recurrsion call
+
+				}
+			}
+		}
+	}
+
+	void inorder(Node r) {
+		if (r != null) {// LPR
+			inorder(r.left);// L
+			System.out.print(r.data + ",");// P
+			inorder(r.right);// L
+		}
+	}
+
+	void preorder(Node r) {
+		if (r != null) {// PLR
+			System.out.print(r.data + ",");// P
+			preorder(r.right);// L
+			preorder(r.left);// R
+		}
+	}
+
+	void postorder(Node r) {
+		if (r != null) {// LRP
+			postorder(r.left);// L
+			postorder(r.right);// r
+			System.out.print(r.data + ",");// P
+		}
+	}
+
+	boolean search(Node r, int key) {
+		if (r == null) {
+			return false; // Key not found in the tree
+		}
+		if (r.data == key) {
+			return true; // Key found
+		} else if (key < r.data) {
+			return search(r.left, key); // Search in left subtree
+		} else {
+			return search(r.right, key); // Search in right subtree
+		}
+	}
+
+	public static void main(String args[]) {
+		Tree_Class obj = new Tree_Class();
+		obj.create_tree();
+
+		obj.insert(obj.root, new Node(10));
+		obj.insert(obj.root, new Node(30));
+		obj.insert(obj.root, new Node(20));
+		obj.insert(obj.root, new Node(5));
+		obj.insert(obj.root, new Node(15));
+
+		System.out.println("Tree has:");
+		System.out.println("\nIn-Order:");
+		obj.inorder(obj.root);
+		System.out.println("\n========================");
+		System.out.println("\nPre-Order:");
+		obj.preorder(obj.root);
+		System.out.println("\n========================");
+		System.out.println("\nPost-Order:");
+		obj.postorder(obj.root);
+		System.out.println("\n========================");
+
+		System.out.println("Search:");
+
+		int key = 220;
+		boolean found = obj.search(obj.root, key);
+		System.out.println("Key " + key + (found ? " found" : " not found") + " in the tree.");
+
+	}
+
+}

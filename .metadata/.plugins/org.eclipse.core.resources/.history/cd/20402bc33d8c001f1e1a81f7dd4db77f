@@ -1,0 +1,30 @@
+package treeexample;
+
+public class Tree_Class {
+
+	Node root;
+
+	void create_tree() {
+		root = null;
+	}
+
+	void insert(Node r, Node n)// r= root and n=New node
+	{
+		if (root == null) {
+			root = n;
+		} else {
+			if(n.data<r.data)
+			{
+				if(r.left==null)//empty left
+				{
+					r.left=n;
+				}
+				else
+				{
+					insert(r.left,n);//recurrsion call
+					
+				}
+			}
+		}
+	}
+}

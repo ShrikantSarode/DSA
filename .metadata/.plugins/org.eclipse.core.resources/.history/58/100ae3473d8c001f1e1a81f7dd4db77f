@@ -1,0 +1,13 @@
+package treeexample;
+
+public class Tree_Class {
+
+	Node root;
+	
+	void create_tree()
+	{
+		root=null;
+	}
+	void insert(Node r, Node n)//r= root and n=New node
+	{}
+}
