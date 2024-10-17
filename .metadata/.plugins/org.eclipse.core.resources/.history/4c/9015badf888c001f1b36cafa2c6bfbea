@@ -60,7 +60,7 @@ public class A_Stack {
 		{
 			r_word += obj.pop();
 		}
-		System.out.println("Reverse String is: "+r_word);
+		System.out.println("Reverse String is:"+r_word);
 	}
 
 }

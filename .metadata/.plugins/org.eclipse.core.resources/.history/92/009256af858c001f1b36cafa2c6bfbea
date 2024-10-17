@@ -1,0 +1,47 @@
+package dsa_assignments;
+
+//A) Write a  program to accept a string from user and reverse it 
+//using Static implementation of Stack.
+public class A_Stack {
+
+	private int MaxSize, tos;
+	private char stack[];
+
+	void create_stack(int size) {
+		tos = -1;
+		stack = new char[size];
+		MaxSize = size;
+
+	}
+
+	void push(char e) {
+		tos++;
+		stack[tos] = e;
+		System.out.println("Element " + e + " Added.");
+	}
+
+	int pop() {
+		return (stack[tos--]);
+
+	}
+	
+	void print()
+	{
+		for (int i = tos; i >= tos; i--) {
+			System.out.println(stack[i]);
+			
+		}
+	}
+	public static void main(String[] args) {
+		A_Stack obj = new A_Stack();
+		obj.create_stack(5);
+		
+		obj.push('J');
+		obj.push('A');
+		obj.push('V');
+		obj.push('A');
+		
+		obj.print();
+	}
+
+}

@@ -1,7 +1,5 @@
 package dsa_assignments;
 
-import java.util.Scanner;
-
 //A) Write a  program to accept a string from user and reverse it 
 //using Static implementation of Stack.
 public class A_Stack {
@@ -19,10 +17,10 @@ public class A_Stack {
 	void push(char e) {
 		tos++;
 		stack[tos] = e;
-		System.out.println( e + " Added.");
+		System.out.println("Element " + e + " Added.And Tos =" + tos);
 	}
 
-	char pop() {
+	int pop() {
 		return (stack[tos--]);
 
 	}
@@ -34,33 +32,16 @@ public class A_Stack {
 		}
 	}
 
-	boolean isEmpty() {
-		if (tos == -1)
-			return true;
-		else
-			return false;
-	}
-
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-
 		A_Stack obj = new A_Stack();
+		obj.create_stack(5);
 
-		System.out.println("Enter Word: ");
-		String word = sc.next();
+		obj.push('J');
+		obj.push('A');
+		obj.push('V');
+		obj.push('A');
 
-		obj.create_stack(word.length());
-
-		for (int i = 0; i < word.length(); i++) {
-			obj.push(word.charAt(i));
-		}
-		
-		String r_word="";
-		while(obj.isEmpty() !=true)
-		{
-			r_word += obj.pop();
-		}
-		System.out.println("Reverse String is: "+r_word);
+		obj.print();
 	}
 
 }

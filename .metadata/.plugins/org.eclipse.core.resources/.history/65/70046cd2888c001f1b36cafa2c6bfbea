@@ -19,7 +19,7 @@ public class A_Stack {
 	void push(char e) {
 		tos++;
 		stack[tos] = e;
-		System.out.println( e + " Added.");
+		System.out.println("Element " + e + " Added.And Tos =" + tos);
 	}
 
 	char pop() {
@@ -60,7 +60,7 @@ public class A_Stack {
 		{
 			r_word += obj.pop();
 		}
-		System.out.println("Reverse String is: "+r_word);
+		System.out.println(r_word);
 	}
 
 }

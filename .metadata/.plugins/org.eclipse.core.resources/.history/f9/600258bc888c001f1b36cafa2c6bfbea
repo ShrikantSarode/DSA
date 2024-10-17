@@ -39,7 +39,7 @@ public class Reverse_Stack_char {
 
 	}
 
-	char pop() {
+	int pop() {
 		char temp = stack[tos];
 		tos--;
 		return (temp);

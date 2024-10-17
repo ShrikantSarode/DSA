@@ -19,10 +19,10 @@ public class A_Stack {
 	void push(char e) {
 		tos++;
 		stack[tos] = e;
-		System.out.println( e + " Added.");
+		System.out.println("Element " + e + " Added.And Tos =" + tos);
 	}
 
-	char pop() {
+	int pop() {
 		return (stack[tos--]);
 
 	}
@@ -32,13 +32,6 @@ public class A_Stack {
 			System.out.println(stack[i]);
 
 		}
-	}
-
-	boolean isEmpty() {
-		if (tos == -1)
-			return true;
-		else
-			return false;
 	}
 
 	public static void main(String[] args) {
@@ -51,16 +44,10 @@ public class A_Stack {
 
 		obj.create_stack(word.length());
 
-		for (int i = 0; i < word.length(); i++) {
+		for (int i = 0; i <= word.length(); i++) {
 			obj.push(word.charAt(i));
 		}
-		
-		String r_word="";
-		while(obj.isEmpty() !=true)
-		{
-			r_word += obj.pop();
-		}
-		System.out.println("Reverse String is: "+r_word);
+
 	}
 
 }

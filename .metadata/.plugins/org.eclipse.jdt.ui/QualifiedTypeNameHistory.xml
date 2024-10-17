@@ -12,6 +12,10 @@
     <fullyQualifiedTypeName name="linkedlist.Node"/>
     <fullyQualifiedTypeName name="assignment.DoubleLinkedList"/>
     <fullyQualifiedTypeName name="linkedlist.Dnode"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="dsa_assignments.Employee"/>
+    <fullyQualifiedTypeName name="dsa_assignments.A_Stack"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.lang.StrictMath"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>
