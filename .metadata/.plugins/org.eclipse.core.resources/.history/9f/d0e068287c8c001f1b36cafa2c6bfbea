@@ -1,0 +1,84 @@
+package dsa_assignments;
+
+//Problem Statement:
+//Create a linear linked list-based system to manage employee information. Each node in the linked list should store the following employee attributes:
+//
+//A unique integer identifier for the employee.
+//A string representing the employee's name.
+//A floating-point number representing the employee's salary.
+//A string representing the employee's email address.
+//The system should provide the following functionalities:
+//Add a new employee to the linked list.
+//Find an employee based on their ID,if found will return details.
+//Display information for all employees in the linked list as a list .
+//Input:
+//
+//Employee information (ID, name, salary, email) for registration.
+//Search criteria (ID).
+//Output:
+//
+//Success message for successful registration.
+//Employee information for search results.
+//List of all employees in the system.
+//Constraints:
+//
+//Employee IDs should be unique.
+//The system should handle potential errors gracefully (e.g., invalid input, employee not found).
+//The linked list should be implemented efficiently for optimal performance.
+public class Employee {
+
+	int id;
+	String name;
+	float sal;
+	String email;
+	Employee next;
+
+	public Employee(int id, String name, float sal, String email) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.sal = sal;
+		this.email = email;
+	}
+
+	class EmpList {
+		Employee root, next;
+
+		// Add a new employee to the list
+		public void addEmployee(int id, String name, float sal, String email) {
+			Employee newEmployee = new Employee(id, name, sal, email);
+			if (root == null) {
+				root = newEmployee;
+			} else {
+				Employee temp = root;
+				while (temp.next != null) {
+					temp = temp.next;
+				}
+				temp.next = newEmployee;
+			}
+		}
+		 // Display the employee list
+	    public void displayEmployees() {
+	        if (root == null) {
+	            System.out.println("No employees in the list.");
+	        } else {
+	            Employee temp = root;
+	            while (temp != null) {
+	                System.out.println("ID: " + temp.id + ", Name: " + temp.name + ", Position: " + temp.email + ", Salary: " + temp.sal);
+	                temp = temp.next;
+	            }
+	        }
+	    }
+
+	    public static void main(String[] args) {
+	        Employee list = new Employee();
+	        list.addEmployee(1, "Alice", "Manager", 80000);
+	        list.addEmployee(2, "Bob", "Developer", 60000);
+	        list.addEmployee(3, "Charlie", "Designer", 50000);
+
+	        list.displayEmployees();
+	    }
+
+
+	}
+}
