@@ -43,7 +43,7 @@ public class EmpList {
             if (temp.id == id) {
                 return temp;
             }
-            temp = temp.next;            
+            temp = temp.next;
         }
         return null; // Employee not found
     }

@@ -57,8 +57,7 @@ public class StackDemo1 {
 		return (stack[tos]);
 	}
 
-	void print_Stack() {// lifo print
-		System.out.println("Stack has");
+	void print_Stack() {// lifo print System.out.println("Stack has");
 		for (int i = tos; i >= 0; i--) {
 			System.out.println(stack[i]);
 		}
