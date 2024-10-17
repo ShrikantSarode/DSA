@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class TestEmp {
 
+
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Emp list = new Emp();

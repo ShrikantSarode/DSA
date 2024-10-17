@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class TestEmp {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Emp list = new Emp();
+
+        System.out.println("How many employees would you like to add?");
+        int numEmployees = scanner.nextInt();
+
+        for (int i = 0; i < numEmployees; i++) {
+            System.out.println("Enter details for employee " + (i + 1) + ":");
+            System.out.print("ID: ");
+            int id = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+            System.out.print("Name: ");
+            String name = scanner.nextLine();
+            System.out.print("Salary: ");
+            float salary = scanner.nextFloat();
+            scanner.nextLine(); // Consume newline
+            System.out.print("Email: ");
+            String email = scanner.nextLine();
+
+            list.addEmployee(id, name, salary, email);
+        }
+
+        System.out.println("\nAll employees:");
+        list.displayEmployees();
+
+        System.out.print("\nEnter ID to search for an employee: ");
+        int searchId = scanner.nextInt();
+        EmpList employee = list.findEmployee(searchId);
+        if (employee != null) {
+            System.out.println("Employee found: ID: " + employee.id + ", Name: " + employee.name + ", Salary: " + employee.sal + ", Email: " + employee.email);
+        } else {
+            System.out.println("Employee with ID " + searchId + " not found.");
+        }
+
+        scanner.close();
+    }
+}
