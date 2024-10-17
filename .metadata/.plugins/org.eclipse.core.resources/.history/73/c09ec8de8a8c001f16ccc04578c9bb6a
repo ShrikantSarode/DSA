@@ -1,0 +1,100 @@
+package dsa_assignments;
+
+// Node1 class representing an element of the linked list
+class Node1 {
+    int data;
+    Node1 next;
+
+    public Node1(int data) {
+        this.data = data;
+        this.next = null; // Initialize next as null
+    }
+}
+
+// B_LinkedList class for managing the linked list
+public class B_LinkedList {
+    Node1 head;
+
+    // Method to add an element in sorted order
+    public void addSorted(int data) {
+        Node1 newNode = new Node1(data);
+        if (head == null || head.data >= newNode.data) {
+            newNode.next = head;
+            head = newNode;
+        } else {
+            Node1 current = head;
+            while (current.next != null && current.next.data < newNode.data) {
+                current = current.next;
+            }
+            newNode.next = current.next;
+            current.next = newNode;
+        }
+    }
+
+    // Method to display the elements of the linked list
+    public void display() {
+        Node1 current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
+
+    // Method to find the union of two linked lists
+    public B_LinkedList union(B_LinkedList list2) {
+        B_LinkedList result = new B_LinkedList();
+        Node1 temp1 = this.head;
+        Node1 temp2 = list2.head;
+        while (temp1 != null && temp2 != null) {
+            if (temp1.data < temp2.data) {
+                result.addSorted(temp1.data);
+                temp1 = temp1.next;
+            } else if (temp1.data > temp2.data) {
+                result.addSorted(temp2.data);
+                temp2 = temp2.next;
+            } else {
+                result.addSorted(temp1.data);
+                temp1 = temp1.next;
+                temp2 = temp2.next;
+            }
+        }
+        while (temp1 != null) {
+            result.addSorted(temp1.data);
+            temp1 = temp1.next;
+        }
+        while (temp2 != null) {
+            result.addSorted(temp2.data);
+            temp2 = temp2.next;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        B_LinkedList list1 = new B_LinkedList();
+        B_LinkedList list2 = new B_LinkedList();
+
+        // Adding elements to list1 in sorted order
+        list1.addSorted(1);
+        list1.addSorted(3);
+        list1.addSorted(5);
+
+        // Adding elements to list2 in sorted order
+        list2.addSorted(2);
+        list2.addSorted(3);
+        list2.addSorted(4);
+        list2.addSorted(6);
+
+        // Displaying list1 and list2
+        System.out.println("List 1:");
+        list1.display();
+
+        System.out.println("List 2:");
+        list2.display();
+
+        // Finding the union of list1 and list2
+        B_LinkedList unionList = list1.union(list2);
+        System.out.println("Union of List 1 and List 2:");
+        unionList.display();
+    }
+}

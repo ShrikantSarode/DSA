@@ -1,0 +1,7 @@
+package dsa_assignments;
+//B)Write a program to create two singly linked list of elements of type integer and
+//find the union of the linked lists.
+//(Accept elements in the sorted order.)
+public class B_LinkedList {
+
+}
