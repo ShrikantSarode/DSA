@@ -1,0 +1,87 @@
+package dsaAssignment18oct;
+
+import java.util.Scanner;
+
+public class BinaryTree {
+
+	Node root;
+
+	BinaryTree() {
+		root = null;
+	}
+
+	void insert(int key) {
+		root = add(root, key);
+	}
+
+	Node add(Node root, int data) {
+
+		if (root == null) {
+			root = new Node(data);
+			return root;
+		}
+
+		if (data < root.data) {
+			root.left = add(root, data);
+		} else {
+			root.right = add(root, data);
+		}
+		return root;
+	}
+
+	void preorder(Node root)// plr
+	{
+		while (root != null) {
+			System.out.println(root.data + " ");
+			preorder(root.left);
+			preorder(root.right);
+		}
+
+	}
+
+	void postorder(Node root)// lrp
+	{
+		while (root != null) {
+			postorder(root.left);
+			postorder(root.right);
+			System.out.println(root.data + " ");
+		}
+	}
+
+	void inorder(Node root)// lpr
+	{
+		while (root != null) {
+			inorder(root.left);
+			inorder(root.right);
+			System.out.println(root.data + " ");
+		}
+
+	}
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		int ch;
+		do {
+			System.out.println("Menu");
+			System.out.println("1.Insert");
+			System.out.println("2.Pre-Order");
+			System.out.println("3.Post-Order");
+			System.out.println("4.In-Order");
+			System.out.println("0.Exiting");
+			System.out.println("Enter Choice:");
+			ch = sc.nextInt();
+			
+			switch (ch) {
+			case 1:
+				
+				break;
+
+			default:System.out.println("Invalid Data!!");
+				break;
+			}
+		} while (ch != 0);
+
+	}
+}

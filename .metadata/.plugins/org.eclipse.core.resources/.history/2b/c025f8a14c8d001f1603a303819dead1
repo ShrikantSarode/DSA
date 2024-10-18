@@ -1,0 +1,50 @@
+package dsaAssignment18oct;
+
+public class BinaryTree {
+
+	Node root;
+
+	BinaryTree() {
+		root = null;
+	}
+
+	void insert(int key) {
+		root = add(root, key);
+	}
+
+	Node add(Node root, int data) {
+
+		if (root == null) {
+			root = new Node(data);
+			return root;
+		}
+
+		if (data < root.data) {
+			root.left = add(root, data);
+		} else {
+			root.right = add(root, data);
+		}
+		return root;
+	}
+	
+	void preorder(Node root)//plr
+	{
+		while(root!=null)
+		{
+			System.out.println(root.data);
+			preorder(root.left);
+			preorder(root.right);
+		}
+		
+	}
+	
+	void postorder()//lrp
+	{
+		
+	}
+	
+	void inorder()//lpr
+	{
+		
+	}
+}

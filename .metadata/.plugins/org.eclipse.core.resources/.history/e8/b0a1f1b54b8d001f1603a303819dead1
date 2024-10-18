@@ -1,0 +1,29 @@
+package dsaAssignment18oct;
+
+public class BinaryTree {
+
+	Node root;
+
+	BinaryTree() {
+		root = null;
+	}
+
+	void insert(int key) {
+		root = add(root, key);
+	}
+
+	Node add(Node root, int data) {
+		Node n = new Node(data);
+		if (root == null) {
+			root = new Node(data);
+			return root;
+		}
+
+		if (data < root.data) {
+			root.left = add(root, data);
+		} else {
+			root.right = add(root, data);
+		}
+		return root;
+	}
+}

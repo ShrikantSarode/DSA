@@ -15,6 +15,7 @@ public class Quick_Sort {
 		while (i < j)
 
 		{
+
 			while (a[i] < a[pivot])
 
 				i++;
@@ -46,14 +47,14 @@ public class Quick_Sort {
 			quick_sort(a, start, j - 1);
 
 	}
+	 public static void main(String[] args) {
+	        int a[] = {77, 88, 44, 99, 33, 55, 66, 22, 11};
+	        quick_sort(a, 0, a.length - 1);
 
-	public static void main(String[] args) {
-		int a[] = { 77, 88, 44, 99, 33, 55, 66, 22, 11 };
-		quick_sort(a, 0, a.length - 1);
-
-		System.out.println("Sorted array:");
-		for (int num : a) {
-			System.out.print(num + " ");
-		}
-	}
+	        System.out.println("Sorted array:");
+	        for (int num : a) {
+	            System.out.print(num + " ");
+	        }
+	    }
 }
+                

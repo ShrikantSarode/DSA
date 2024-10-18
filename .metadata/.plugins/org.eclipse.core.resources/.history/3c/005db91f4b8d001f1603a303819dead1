@@ -1,0 +1,17 @@
+package dsaAssignment18oct;
+
+public class BinaryTree {
+	
+	Node root;
+	
+	Node add(Node root,int data)
+	{
+	
+		if(root==null)
+		{
+			root=new Node(data);
+		}
+		return root;
+	}
+
+}

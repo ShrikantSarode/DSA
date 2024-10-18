@@ -10,7 +10,7 @@ public class Quick_Sort {
 
 		int j = end;
 
-		int pivot = end;
+		int pivot = end;8  
 
 		while (i < j)
 
