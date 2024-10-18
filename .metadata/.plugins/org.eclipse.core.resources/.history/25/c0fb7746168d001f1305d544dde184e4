@@ -1,0 +1,9 @@
+package sorting;
+
+public class Sorting_Main {
+
+	public static void main(String[] args) {
+		
+		int a[]= {77,88,44,55,66,22,11};
+	}
+}

@@ -1,0 +1,45 @@
+package sorting;
+
+public class Quick_Sort {
+    static void quick_sort(int a[], int start, int end) {
+        if (start >= end) {
+            return;
+        }
+
+        int i = start, j = end;
+        int pivot = a[(start + end) / 2]; // Middle element as pivot
+
+        while (i <= j) {
+            while (a[i] < pivot) {
+                i++;
+            }
+            while (a[j] > pivot) {
+                j--;
+            }
+            if (i <= j) {
+                int temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+                i++;
+                j--;
+            }
+        }
+
+        if (start < j) {
+            quick_sort(a, start, j);
+        }
+        if (i < end) {
+            quick_sort(a, i, end);
+        }
+    }
+
+    public static void main(String[] args) {
+        int a[] = {77, 88, 44, 99, 33, 55, 66, 22, 11};
+        quick_sort(a, 0, a.length - 1);
+
+        System.out.println("Sorted array:");
+        for (int num : a) {
+            System.out.print(num + " ");
+        }
+    }
+}
