@@ -1,0 +1,12 @@
+package dsaAssignment18oct;
+
+public class Singly_Linked_List {
+
+	DNode root;
+
+	void insert_left(DNode root, int data) {
+		if (root == null) {
+			root = new DNode(data);
+		}
+	}
+}

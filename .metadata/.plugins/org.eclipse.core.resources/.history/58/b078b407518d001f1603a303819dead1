@@ -6,7 +6,7 @@ public class DNode {
 	int data;
 
 	public DNode(int data) {
-
+		super();
 		this.data = data;
 		this.next = null;
 	}

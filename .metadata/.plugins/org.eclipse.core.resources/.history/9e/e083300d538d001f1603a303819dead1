@@ -2,7 +2,7 @@ package dsaAssignment18oct;
 
 public class DNode {
 
-	DNode next;
+	DNode next,last;
 	int data;
 
 	public DNode(int data) {

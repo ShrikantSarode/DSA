@@ -1,0 +1,40 @@
+package dsaAssignment18oct;
+
+public class Singly_Linked_List {
+
+	DNode root, last;
+
+	void insert_left(DNode root, int data) {
+		DNode n = new DNode(data);
+		if (root == null) {
+			root = last = n;
+		} else {
+			last.next = n;
+			last = n;
+			last.next = root;
+
+		}
+	}
+
+	void print() {
+        if (root == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+        DNode current = root;
+        do {
+            System.out.print(current.data + " ");
+            current = current.next;
+        } while (current != root);
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Singly_Linked_List list = new Singly_Linked_List();
+        list.insert_left(list.root, 10);
+        list.insert_left(list.root,20);
+        list.insert_left(list.root,30);
+
+        list.print(); // Should print: 30 20 10
+    }
+}
