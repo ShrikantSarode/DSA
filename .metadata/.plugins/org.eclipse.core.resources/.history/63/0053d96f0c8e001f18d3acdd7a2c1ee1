@@ -1,0 +1,48 @@
+package heap;
+
+public class Assignment_Heap_19Oct {
+
+	private final int SIZE = 10;
+	private int[] table;
+	private boolean[] occupied;
+
+	public Assignment_Heap_19Oct() {
+		table = new int[SIZE];
+		occupied = new boolean[SIZE];
+	}
+
+	private int hasFunction(int key) {
+		return key % SIZE;
+	}
+
+	public void insert(int Key) {
+		int hashIndex = hasFunction(Key);
+
+		while (occupied[hashIndex]) {
+			hashIndex = (hashIndex + 1) % SIZE;
+		}
+		table[hashIndex] = Key;
+		occupied[hashIndex] = true;
+
+	}
+
+	public boolean search(int Key) {
+
+		int hashIndex = hasFunction(Key);
+		int startIndex = hashIndex;
+		
+		while(occupied[hashIndex]) {
+			if(table[hashIndex]==Key)
+			{
+				return true;
+			}
+			hashIndex = (hashIndex +1) % SIZE;
+			if(hashIndex == startIndex)
+			{
+				break;
+			}
+		}
+		return false;
+	}
+
+}

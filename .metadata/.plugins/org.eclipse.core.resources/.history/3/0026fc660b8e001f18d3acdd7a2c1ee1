@@ -1,0 +1,16 @@
+package heap;
+
+public class Assignment_Heap_19Oct {
+	
+	private final int SIZE = 10;
+    private int[] table;
+    private boolean[] occupied;
+
+    public Assignment_Heap_19Oct() {
+        table = new int[SIZE];
+        occupied = new boolean[SIZE];
+    }
+
+
+
+}
