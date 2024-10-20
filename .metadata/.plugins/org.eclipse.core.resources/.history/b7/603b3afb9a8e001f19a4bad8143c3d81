@@ -1,0 +1,67 @@
+package sortingLinkedList;
+
+public class LinkedListSorted {
+
+	Node root;
+
+	void create(int data) {
+		root  = null;
+	}
+
+	void insert(int data) {
+		Node n = new Node(data);
+		if (root == null) {
+			root = n;
+		} else {
+			n.next = root;
+			root = n;
+
+		}
+	}
+	
+	 void sort() {
+	        if (root == null || root.next == null) {
+	            return;
+	        }
+
+	        Node current = root;
+	        while (current != null) {
+	            Node nextNode = current.next;
+	            while (nextNode != null) {
+	                if (current.data > nextNode.data) {
+	                    int temp = current.data;
+	                    current.data = nextNode.data;
+	                    nextNode.data = temp;
+	                }
+	                nextNode = nextNode.next;
+	            }
+	            current = current.next;
+	        }
+	    }
+
+	    void print() {
+	        Node t = root;
+	        while (t != null) {
+	            System.out.print(t.data + " ");
+	            t = t.next;
+	        }
+	        System.out.println();
+	    }
+
+	    public static void main(String[] args) {
+	        LinkedListSorted list = new LinkedListSorted();
+	        list.insert(50);
+	        list.insert(20);
+	        list.insert(40);
+	        list.insert(10);
+	        list.insert(30);
+
+	        System.out.println("Before Sorting:");
+	        list.print();
+
+	        list.sort();
+
+	        System.out.println("After Sorting:");
+	        list.print();
+	    }
+	}

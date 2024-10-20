@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;sortingLinkedList.LinkedListSorted2&apos; to &apos;Merge_LinkedList&apos;&#x0D;&#x0A;- Original project: &apos;Dsa&apos;&#x0D;&#x0A;- Original element: &apos;sortingLinkedList.LinkedListSorted2&apos;&#x0D;&#x0A;- Renamed element: &apos;sortingLinkedList.Merge_LinkedList&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LinkedListSorted2&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;sortingLinkedList{LinkedListSorted2.java[LinkedListSorted2" matchStrategy="1" name="Merge_LinkedList" qualified="false" references="true" similarDeclarations="false" stamp="1729398492388" textual="false" version="1.0"/>
+</session>

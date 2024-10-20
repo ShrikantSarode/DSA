@@ -1,0 +1,91 @@
+package sortingLinkedList;
+
+class Node {
+    int data;
+    Node next;
+
+    public Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+public class LinkedListSorted {
+    Node root, last;
+
+    void create(int data) {
+        root = last = null;
+    }
+
+    void insert(int data) {
+        Node n = new Node(data);
+        if (root == null) {
+            root = n;
+        } else {
+            n.next = root;
+            root = n;
+        }
+    }
+
+    void sort() {
+        if (root == null) {
+            return;
+        }
+        boolean swapped;
+        do {
+            Node current = root;
+            Node prev = null;
+            Node next = root.next;
+            swapped = false;
+
+            while (next != null) {
+                if (current.data > next.data) {
+                    swapped = true;
+                    if (prev != null) {
+                        Node temp = next.next;
+                        prev.next = next;
+                        next.next = current;
+                        current.next = temp;
+                    } else {
+                        Node temp = next.next;
+                        root = next;
+                        next.next = current;
+                        current.next = temp;
+                    }
+                    prev = next;
+                    next = current.next;
+                } else {
+                    prev = current;
+                    current = next;
+                    next = next.next;
+                }
+            }
+        } while (swapped);
+    }
+
+    void print() {
+        Node t = root;
+        while (t != null) {
+            System.out.print(t.data + " ");
+            t = t.next;
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        LinkedListSorted list = new LinkedListSorted();
+        list.insert(50);
+        list.insert(20);
+        list.insert(40);
+        list.insert(10);
+        list.insert(30);
+
+        System.out.println("Before Sorting:");
+        list.print();
+
+        list.sort();
+
+        System.out.println("After Sorting:");
+        list.print();
+    }
+}

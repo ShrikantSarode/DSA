@@ -1,0 +1,36 @@
+package sortingLinkedList;
+
+public class LinkedListSorted {
+
+	Node root;
+
+	void create(int data) {
+		root  = null;
+	}
+
+	void insert(int data) {
+		Node n = new Node(data);
+		if (root == null) {
+			root = n;
+		} else {
+			n.next = root;
+			root = n;
+
+		}
+	}
+	
+	void sort()
+	{
+		
+		Node t=root;
+		Node t2=t.next;
+		int temp;
+		while(t2!=null)
+		{
+			if(t<t2)
+			{
+				//bubble sort
+			}
+		}
+	}
+}

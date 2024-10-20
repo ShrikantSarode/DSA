@@ -1,0 +1,47 @@
+package sortingLinkedList;
+
+public class LinkedListSorted {
+
+	Node root;
+
+	void create(int data) {
+		root  = null;
+	}
+
+	void insert(int data) {
+		Node n = new Node(data);
+		if (root == null) {
+			root = n;
+		} else {
+			n.next = root;
+			root = n;
+
+		}
+	}
+	
+	void sort() {
+	    if (root == null || root.next == null) {
+	        return; // No need to sort if the list is empty or has one element
+	    }
+
+	    boolean swapped;
+	    do {
+	        Node t = root;
+	        Node t2 = t.next;
+	        swapped = false;
+
+	        while (t2 != null) {
+	            if (t.data > t2.data) { // Swap if out of order
+	                int temp = t.data;
+	                t.data = t2.data;
+	                t2.data = temp;
+	                swapped = true;
+	            }
+	            t = t2;
+	            t2 = t2.next;
+	        }
+	    } while (swapped);
+	}
+
+	}
+}

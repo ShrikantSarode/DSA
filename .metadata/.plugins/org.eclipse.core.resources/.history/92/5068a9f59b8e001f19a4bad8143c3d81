@@ -1,0 +1,35 @@
+package sortingLinkedList;
+//merge sort
+public class Merge_LinkedList {
+
+	Node root;
+
+	void create(int data) {
+		root = null;
+	}
+
+	void insert(int data) {
+		Node n = new Node(data);
+		if (root == null) {
+			root = n;
+		} else {
+			n.next = root;
+			root = n;
+
+		}
+	}
+
+	void print() {
+		Node t = root;
+		while (t != null) {
+			System.out.print(t.data + " ");
+			t = t.next;
+		}
+		System.out.println();
+	}
+	public static void main(String[] args) {
+		Merge_LinkedList list1 = new Merge_LinkedList();
+		Merge_LinkedList list2 = new Merge_LinkedList();
+		
+	}
+}

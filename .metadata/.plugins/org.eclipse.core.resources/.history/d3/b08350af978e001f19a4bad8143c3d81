@@ -1,0 +1,13 @@
+package sortingLinkedList;
+
+public class LinkedListSorted {
+
+	Node root;
+	void create (int data) {
+		root=null;
+	}
+	void insert(int data)
+	{
+		
+	}
+}
