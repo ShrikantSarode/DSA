@@ -35,9 +35,9 @@ public class Merge_LinkedList {
         }
     }
 
-    static Merge_LinkedList merge_list(Node r1, Node r2) {
+    static Merge_Linked_lists merge_list(Node r1, Node r2) {
         Node i, j;
-        Merge_LinkedList obj3 = new Merge_LinkedList();
+        Merge_Linked_lists obj3 = new Merge_Linked_lists();
         obj3.create_list();
         i = r1;
         j = r2;
@@ -68,7 +68,7 @@ public class Merge_LinkedList {
     }
 
     public static void main(String[] args) {
-    	Merge_LinkedList list1 = new Merge_LinkedList();
+        Merge_Linked_lists list1 = new Merge_Linked_lists();
         list1.create_list();
         list1.insert(10);
         list1.insert(15);
@@ -77,7 +77,7 @@ public class Merge_LinkedList {
         System.out.println("Sorted list 1");
         list1.print_list();
 
-        Merge_LinkedList list2 = new Merge_LinkedList();
+        Merge_Linked_lists list2 = new Merge_Linked_lists();
         list2.create_list();
         list2.insert(5);
         list2.insert(12);
@@ -86,7 +86,7 @@ public class Merge_LinkedList {
         System.out.println("Sorted list 2");
         list2.print_list();
 
-        Merge_LinkedList list3 = new Merge_LinkedList();
+        Merge_Linked_lists list3 = new Merge_Linked_lists();
         list3 = merge_list(list1.root, list2.root);
         System.out.println("Merged list is");
         list3.print_list();
