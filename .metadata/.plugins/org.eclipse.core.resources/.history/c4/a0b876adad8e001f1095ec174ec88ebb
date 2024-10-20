@@ -1,0 +1,10 @@
+package sortingLinkedList;
+
+import stack.StackDemo1;
+
+public class Queue_Stack {
+
+	StackDemo1 s1;
+	StackDemo1 s2;
+
+}

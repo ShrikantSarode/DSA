@@ -1,0 +1,12 @@
+package dsaQuestion;
+
+import queue.QueueDemo1;
+
+public class Queue_Binary {
+
+	QueueDemo1 q1;
+	int dec=0;
+	int power=0;
+	
+	while(! q1.)
+}

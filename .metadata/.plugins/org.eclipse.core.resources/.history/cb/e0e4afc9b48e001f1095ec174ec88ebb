@@ -1,0 +1,26 @@
+package dsaQuestion;
+
+import queue.QueueDemo1;
+
+public class Queue_Binary {
+
+	QueueDemo1 q1;
+	int dec=0;
+	int power=0;
+	
+	 int convert_Binary()
+	{
+		 q1.create_Queue(100);
+		while(! q1.is_Empty())
+		{
+			int digit = q1.Dequeue();
+			dec +=digit* Math.pow(2,power);
+			power++;
+		}
+		return dec;
+	}
+	 public static void main(String[] args) {
+		Queue_Binary binary = new Queue_Binary();
+		
+	}
+}

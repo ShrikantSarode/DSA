@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class StackDemo1 {
 
-	private int stack[], MaxSize, tos;
+	public int stack[], MaxSize, tos;
 
 	Scanner sc = new Scanner(System.in);
 
@@ -16,7 +16,7 @@ public class StackDemo1 {
 
 	}
 
-	void push(int e) {
+	public void push(int e) {
 
 		tos++;
 		stack[tos] = e;
@@ -24,7 +24,7 @@ public class StackDemo1 {
 		System.out.println("Element " + e + " Pushed:");
 	}
 
-	boolean is_Full()
+	public boolean is_Full()
 
 	{
 		if (tos == MaxSize - 1) {
@@ -38,7 +38,7 @@ public class StackDemo1 {
 
 	}
 
-	int pop() {
+	public int pop() {
 		int temp = stack[tos];
 		tos--;
 		return (temp);
@@ -46,7 +46,7 @@ public class StackDemo1 {
 	}
 	// return(stack[tos--]);
 
-	boolean is_Empty() {
+	public boolean is_Empty() {
 		if (tos == -1)
 			return true;
 		else
@@ -56,12 +56,15 @@ public class StackDemo1 {
 	int peek() {
 		return (stack[tos]);
 	}
-
-	void print_Stack() {// lifo print
+ 
+	public void print_Stack() {// lifo print
+		
 		System.out.println("Stack has");
 		for (int i = tos; i >= 0; i--) {
 			System.out.println(stack[i]);
 		}
 
 	}
+	 
+	 
 }

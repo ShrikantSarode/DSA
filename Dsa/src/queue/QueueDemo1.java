@@ -12,33 +12,33 @@ public class QueueDemo1 {
 		Q = new int[size];// create queue
 	}
 
-	void Enqueue(int e) {
+	public void Enqueue(int e) {
 		rear++;
 		Q[rear] = e;
 		System.out.println("Element " + e + " Inserted in Queue");
 	}
 
-	int Dequeue() {
+	public int Dequeue() {
 		int temp = Q[front];
 		front++;
 		return (temp);
 	}
 
-	boolean is_Empty() {
+	public boolean is_Empty() {
 		if (front > rear)
 			return true;
 		else
 			return false;
 	}
 
-	boolean is_Full() {
+	public boolean is_Full() {
 		if (rear == MaxSize - 1)
 			return true;
 		else
 			return false;
 	}
 
-	void print_Queue() {
+	public void print_Queue() {
 		// fifo print
 		System.out.println("Queue has");
 		for (int i = front; i <= rear; i++) {

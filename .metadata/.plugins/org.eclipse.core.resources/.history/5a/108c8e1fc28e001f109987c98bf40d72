@@ -1,0 +1,34 @@
+package dsaQuestion;
+
+import java.util.Scanner;
+
+public class CountEdges_Graph {
+	int v, visited[], g[][];
+	// v: number of nodes
+	// g: Adjacency matrix of v x v
+	// visited[i]: 1 means visited, 0 means unvisited
+
+	void createGraph(int nodes) {
+		v = nodes; // Number of nodes in the graph
+		Scanner in = new Scanner(System.in);
+		g = new int[v][v]; // Initialize adjacency matrix
+		visited = new int[v]; // Initialize visited array
+
+		for (int i = 0; i < v; i++) {
+			for (int j = 0; j < v; j++) {
+				System.out.println("Enter value for v" + i + " to v" + j + " (999 for infinity):");
+				g[i][j] = in.nextInt(); // Fill adjacency matrix
+			}
+		}
+	}
+
+	void printG() {
+		for (int i = 0; i < v; i++) {
+			for (int j = 0; j < v; j++) {
+				System.out.print(g[i][j] + "\t"); // Print adjacency matrix
+			}
+			System.out.println();
+		}
+	}
+
+}

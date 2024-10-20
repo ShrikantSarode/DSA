@@ -1,0 +1,60 @@
+package sortingLinkedList;
+
+import stack.StackDemo1;
+
+public class Queue_Stack {
+    StackDemo1 s1 = new StackDemo1();
+    StackDemo1 s2 = new StackDemo1();
+
+    // Enqueue operation
+    public void enqueue(int data) {
+        s1.push(data);
+    }
+
+    // Dequeue operation
+    public int dequeue() {
+        if (s2.isEmpty()) {
+            if (s1.isEmpty()) {
+                System.out.println("Queue is Empty");
+                return -1;
+            }
+            while (!s1.isEmpty()) {
+                s2.push(s1.pop());
+            }
+        }
+        return s2.pop();
+    }
+
+    // Display queue
+    public void display() {
+        System.out.println("Elements in queue:");
+        if (!s2.isEmpty()) {
+            for (int i = s2.size() - 1; i >= 0; i--) {
+                System.out.print(s2.get(i) + " ");
+            }
+        }
+        if (!s1.isEmpty()) {
+            for (int i = 0; i < s1.size(); i++) {
+                System.out.print(s1.get(i) + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Queue_Stack queue = new Queue_Stack();
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        queue.display(); // Displays: 10 20 30
+
+        System.out.println("Dequeued: " + queue.dequeue()); // Dequeues 10
+        queue.display(); // Displays: 20 30
+
+        queue.enqueue(40);
+        queue.display(); // Displays: 20 30 40
+
+        System.out.println("Dequeued: " + queue.dequeue()); // Dequeues 20
+        queue.display(); // Displays: 30 40
+    }
+}

@@ -4,7 +4,7 @@ public class LinkedListSorted {
 
 	Node root;
 
-	void create(int data) {
+	void create() {
 		root  = null;
 	}
 
@@ -50,6 +50,7 @@ public class LinkedListSorted {
 
 	    public static void main(String[] args) {
 	        LinkedListSorted list = new LinkedListSorted();
+	        list.create();
 	        list.insert(50);
 	        list.insert(20);
 	        list.insert(40);

@@ -1,0 +1,29 @@
+package sortingLinkedList;
+
+import stack.StackDemo1;
+
+public class Queue_Stack {
+
+	StackDemo1 s1;
+	StackDemo1 s2;
+	
+	public void enqueue(int data)
+	{
+		s1.push(data);
+	}
+	public int dequeue() {
+		if(s2.is_Empty())
+		{
+			if(s1.is_Empty())
+			{
+				System.out.println("Queue is Empty");
+				return -1;
+			}
+			while(!s1.is_Empty()) {
+				s2.push(s1.pop());
+			}
+		}
+		return s2.pop();
+	}
+
+}

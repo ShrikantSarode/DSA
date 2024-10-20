@@ -1,0 +1,62 @@
+package sortingLinkedList;
+
+import stack.StackDemo1;
+
+public class Queue_Stack {
+	 
+	StackDemo1 obj;
+
+	private int Q[], MaxSize, front, rear;
+
+	public void create_Queue(int size) {
+		MaxSize = size;// init MaxSize front = 0;
+		rear = -1;
+		Q = new int[size];// create queue
+	}
+
+	void Enqueue(int e) {
+		rear++;
+		Q[rear] = e;
+		System.out.println("Element " + e + " Inserted in Queue");
+	}
+
+	void write_to_stack() {
+		int length = 0;
+		if (root == null) {
+			System.out.println("List Empty");
+		} else {
+			Node t = root;
+			while (t != null) {
+				length++;
+				t = t.next;
+			}
+			// create stack of size of length
+			obj.create_Stack(length);
+
+			// read all elements and push on stack
+			t = root;
+			while (t != null) {
+				obj.push(t.data);
+				t = t.next;
+			}
+
+			// Traverse the linked list again to write back the data from the stack
+			t = root;
+			while (t != null) {
+				obj.pop();
+				t = t.next;
+			}
+		}
+	}
+
+	 
+	void print() {
+		Node t = root;
+		while (t != null) {
+			System.out.print("|"+ t.data + "|-> ");
+			t = t.next;
+		}
+
+	}
+
+}

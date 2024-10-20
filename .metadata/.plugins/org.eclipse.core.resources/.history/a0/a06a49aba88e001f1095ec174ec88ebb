@@ -1,0 +1,42 @@
+package sortingLinkedList;
+
+public class ReverseList {
+
+	Node root;
+
+	void create() {
+		root = null;
+	}
+
+	void insert(int data) {
+		Node n = new Node(data);
+		if (root == null) {
+			root = n;
+		} else {
+			n.next = root;
+			root = n;
+
+		}
+	}
+
+	void print() {
+		Node t = root;
+		while (t != null) {
+			System.out.print(t.data + " ");
+			t = t.next;
+		}
+
+	}
+
+	public static void main(String[] args) {
+
+		ReverseList list = new ReverseList();
+		list.create(0);
+		list.insert(10);
+		list.insert(15);
+		list.insert(20);
+		list.insert(25);
+		System.out.println("Reverse list :");
+		list.print();
+	}
+}
