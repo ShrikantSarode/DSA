@@ -29,4 +29,8 @@
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="queue.QueueDemo1"/>
     <fullyQualifiedTypeName name="javax.print.attribute.standard.Sides"/>
+    <fullyQualifiedTypeName name="DSA_21OCT.Node"/>
+    <fullyQualifiedTypeName name="DSA_21OCT.LinkedList"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="DSA_21OCT.DoubleLinked"/>
 </qualifiedTypeNameHistroy>
