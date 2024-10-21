@@ -1,0 +1,16 @@
+package DSA_21OCT;
+
+public class Node {
+
+	Node next, left, right, last;
+	int data;
+
+	public Node(int data) {
+
+		this.next = next;
+		this.left = this.right;
+
+		this.data = data;
+	}
+
+}

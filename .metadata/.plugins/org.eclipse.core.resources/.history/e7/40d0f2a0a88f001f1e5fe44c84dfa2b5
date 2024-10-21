@@ -1,0 +1,8 @@
+package DSA_21OCT;
+
+public class DoubleLinked {
+Node left , right;
+
+
+
+}

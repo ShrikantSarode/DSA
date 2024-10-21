@@ -1,0 +1,53 @@
+package DSA_21OCT;
+//B) Write a  program to create doubly link list and display nodes having odd value.
+public class DoubleLinked {
+	Node root,last;
+	
+	void create() {
+		if (root == null) {
+			root.left = last = null;
+		}
+	}
+
+	void Insert_right(int data) {
+		Node n = new Node(data);
+		if (root == null) {
+			root = last = n;
+		} else {
+
+			last.right = n;
+			last = n;
+			System.out.println(data + " Inserted");
+		}
+	}
+
+	void search(int key) {
+		Node t = root;
+		int position = 0;
+		boolean found = false;
+		while (t != null) {
+			if (t.data == key) {
+				found = true;
+				break;
+			}
+			t = t.next;
+			position++;
+		}
+		if (found) {
+			System.out.println("\n\nElement " + key + " found at position " + position);
+		} else {
+			System.out.println("\n\nElement " + key + " not found in the list");
+		}
+	}
+
+	void display() {
+		Node t;
+		t = root;
+		while (t != null) {
+			System.out.print("|" + t.data + "|->");
+			t = t.next;
+		}
+	}
+
+
+}
